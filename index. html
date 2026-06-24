@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Grace Wonder Olik! 💙</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS: This is the design part (Option A + Playful tweaks) */
+        
+        :root {
+            --primary-blue: #0A66C2; /* A strong, loyal, deep blue */
+            --accent-blue: #E0F2FE;  /* Very light, airy pastel blue */
+            --background-base: #FFFFFF; /* Pure white for minimalism */
+            --champagne-gold: #FBF7F1; /* Subtle, warm backdrop for sentimental text */
+            --text-dark: #1F2937;  /* Soft black for readability */
+            --text-light: #6B7280; /* Grey for metadata/captions */
+            --tiktok-pink: #FE2C55; /* The streak color (subtle accent) */
+        }
+
+        /* Essential Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-base);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; }
+
+        a { text-decoration: none; transition: color 0.3s ease; color: inherit; }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* --- 1. Hero Header & Countdown --- */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: var(--accent-blue);
+            position: relative;
+            padding: 2rem;
+            border-bottom: 5px solid var(--primary-blue);
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            z-index: 10;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        /* The Countdown Timer */
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            font-weight: 600;
+        }
+
+        .countdown-segment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            font-family: monospace; /* Keep numbers aligned */
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0.5rem;
+        }
+
+        /* --- 2. The Narrative Section --- */
+        #story {
+            padding: 8rem 0;
+            background-color: var(--champagne-gold);
+            text-align: center;
+        }
+
+        .story-block {
+            margin-bottom: 4rem;
+        }
+
+        .story-title {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .streak-mention {
+            font-weight: 600;
+            font-style: italic;
+            color: var(--tiktok-pink);
+            display: block;
+            margin-bottom: 2rem;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left; /* Keep long text readable */
+            padding: 0 1rem;
+        }
+
+        .story-highlight {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* --- 3. The Masonry Gallery --- */
+        #moments {
+            padding: 8rem 0;
+            background-color: var(--background-base);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-blue);
+        }
+
+        /* Minimalist Gallery Structure */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-gap: 15px;
+            grid-auto-flow: dense;
+        }
+
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07);
+        }
+
+        .grid-item img, .grid-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Different aspect ratios to make it interesting */
+        .grid-item.portrait { grid-row: span 2; }
+        .grid-item.wide { grid-column: span 2; }
+
+        .overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%);
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item:hover .overlay {
+            transform: translateY(0%);
+        }
+
+        .caption-text {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .caption-metadata {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* --- 4. Special Memories / Sentimental Block --- */
+        #spotlight {
+            padding: 8rem 0;
+            background-color: var(--accent-blue);
+            color: var(--background-base);
+            position: relative;
+        }
+
+        #spotlight::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 100px;
+            background: var(--background-base);
+            clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .spotlight-content {
+            background-color: var(--champagne-gold);
+            color: var(--text-dark);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 5;
+        }
+
+        .spotlight-title {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .memory-card {
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .memory-highlight {
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-style: italic;
+        }
+
+        /* --- 5. The Birthday Message (Sentimental) --- */
+        #message {
+            padding: 8rem 0;
+            background-color: var(--background-base);
+        }
+
+        .final-message {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            max-width: 850px;
+            margin: 0 auto;
+            white-space: pre-line; /* respects the line breaks in your message */
+            padding: 0 1rem;
+        }
+
+        .heart-breaker {
+            display: block;
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin: 3rem 0;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--background-base);
+            text-align: center;
+            padding: 3rem;
+            border-top: 5px solid var(--primary-blue);
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--background-base);
+            margin-bottom: 1rem;
+        }
+
+        .footer-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Mobile Adjustments (Responsive Design) */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            #countdown { gap: 0.5rem; }
+            .countdown-number { font-size: 2rem; padding: 0.75rem; }
+            .grid-container { grid-template-columns: 1fr; }
+            .grid-item.wide { grid-column: span 1; }
+            .story-text, .final-message { font-size: 1rem; }
+            .spotlight-content { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section id="hero">
+        <div class="hero-content container">
+            <h1 class="hero-title">Happy Birthday, <br/>Grace Wonder Olik! 🎉</h1>
+            <p class="hero-subtitle">Celebrating the most adventure-loving, resilient human I know.</p>
+            
+            <div id="countdown">
+                <div class="countdown-segment">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-segment">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Hrs</span>
+                </div>
+                <div class="countdown-segment">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Mins</span>
+                </div>
+                <div class="countdown-segment">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Secs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="story">
+        <div class="container">
+            <div class="story-block">
+                <h2 class="story-title">When We Met (and the Streaks Began)</h2>
+                <span class="streak-mention">Also: My TikTok Streak Partner! 💖🔥</span>
+                <p class="story-text">
+                    Since <span class="story-highlight">March 12, 2026</span>, life hasn’t just been turbulence; it’s been an incredible adventure. You have stood close to me through it all, like a constant force of <span class="story-highlight">blue</span> calmness and resilience. When we get mad at each other (it happens!), you are always the one to find me, talk, and make sure we forgive. That’s a <span class="story-highlight">Wonder</span> connection.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="moments">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">"Wonder"-ful Moments</h2>
+            </div>
+            
+            <div class="grid-container">
+                <div class="grid-item portrait">
+                    <img src="https://reevor.github.io/images/grace-01.jpg" alt="Grace Wonder smiling at a park">
+                    <div class="overlay">
+                        <p class="caption-text">Traveling spirit, smiling heart.</p>
+                        <p class="caption-metadata">#Adventure #travel</p>
+                    </div>
+                </div>
+
+                <div class="grid-item wide">
+                    <img src="https://reevor.github.io/images/group-01.jpg" alt="A group gathering, including Grace, in a grassy field">
+                    <div class="overlay">
+                        <p class="caption-text">A committed leader: Duke of Edinburgh international award.</p>
+                        <p class="caption-metadata">#DofE #Kenya</p>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="https://reevor.github.io/images/food-01.jpg" alt="Close up of a full plate of food on a wooden table">
+                    <div class="overlay">
+                        <p class="caption-text">We prepare food together... especially pork!</p>
+                        <p class="caption-metadata">#DinnerDate</p>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="https://reevor.github.io/images/grace-02.jpg" alt="Grace Wonder cleaning in an outdoor courtyard">
+                    <div class="overlay">
+                        <p class="caption-text">Resilient, hardworking, and always kind.</p>
+                        <p class="caption-metadata">#Service #Resilience</p>
+                    </div>
+                </div>
+
+                <div class="grid-item portrait">
+                    <video controls muted poster="https://reevor.github.io/images/video-poster.jpg">
+                        <source src="https://reevor.github.io/images/video-sample.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="overlay">
+                        <p class="caption-text">Trying not to die laughing.</p>
+                        <p class="caption-metadata">#Streaks #TikTokPartner</p>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="https://reevor.github.io/images/group-02.jpg" alt="Group standing by the 'Administration Block' of a building">
+                    <div class="overlay">
+                        <p class="caption-text">Duke of Edinburgh commits: personal growth and service.</p>
+                        <p class="caption-metadata">#DofE #KenyaAward</p>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="https://reevor.github.io/images/milkshake.jpg" alt="Two milkshakes, one pink, one white, on a table">
+                    <div class="overlay">
+                        <p class="caption-text">Memories of shared meals.</p>
+                        <p class="caption-metadata">#SharedMoments #Sweet</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="spotlight">
+        <div class="container spotlight-content">
+            <h2 class="spotlight-title">Remembering Special Times</h2>
+            
+            <div class="memory-card">
+                <p>That unforgettable dinner date we had at <span class="memory-highlight">Fat Baby Hotel</span> near our school. Your gesture spoke volumes about your thoughtfulness.</p>
+            </div>
+
+            <div class="memory-card">
+                <p>And those many, simple times where we <span class="memory-highlight">prepared food together</span> and shared meals. Those are the most resilient memories.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="message">
+        <div class="container">
+            <div class="final-message">
+                <span class="heart-breaker">💙💙💙</span>
+                
+                Happy Birthday, Grace Wonder Olik 🎉
+
+Today is a very special day because the world was blessed with someone truly extraordinary—you, Grace Wonder Olik.
+
+Grace, your name suits you perfectly because you carry yourself with grace, kindness, strength, and a warmth that makes everyone around you feel valued.
+
+You have this rare ability to make people feel comfortable and appreciated. I treasure our friendship because you are authentic, caring, and loyal.
+
+One thing that has always stood out is your undisputed sense of adventure. Life is meant to be lived fully, and your love for traveling says so much about who you are. I hope this coming year gives you countless opportunities to travel farther, see more breathtaking places, and create unforgettable memories.
+
+And then there is your love for good food—especially pork. Some of the best memories are created around food, laughter, and good company. I genuinely hope that today you get to enjoy all your favorite dishes.
+
+Grace, your favorite color is blue, and honestly, it suits you perfectly. Blue symbolizes loyalty, trust, depth, calmness, and strength—qualities that define who you are.
+
+There have been moments when life felt overwhelming, but somehow, you always found a way to help. Your kindness has never been performative or conditional; it has been genuine. You help people because that is simply who you are.
+
+Life has a way of testing people, but you continue to rise. Your hardwood and resilience is truly inspiring. I am also proud of your commitment as a member of the Duke of Edinburgh International Award in Kenya. Your involvement reflects your dedication to personal growth and making a positive impact.
+
+Over time, I have come to realize that our friendship is built on something much deeper than convenience. It is built on trust, respect, loyalty, and genuine care.
+
+Happy Birthday, Grace Wonder Olik! 💙🎂🎉
+
+May your heart always be full, your dreams always be within reach, your adventures never end, your table always have great food (especially pork!), and your life always be surrounded by love, joy, and purpose.
+
+Here's to many more years of friendship, laughter, forgiveness, adventures, success, and unforgettable memories together.
+
+**Happy Birthday, Wonder. May God bless you abundantly today and always. 💙✨🎊**
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Grace Wonder Olik.</div>
+            <p class="footer-note">Website created with care by REEVOR</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. COUNTDOWN TIMER LOGIC ---
+        // Final birthday time (July 2, 2026, midnight)
+        const targetDate = new Date("July 2, 2026 00:00:00").getTime();
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const timeDifference = targetDate - now;
+
+            // Calculations for days, hours, minutes and seconds
+            const d = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const h = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            // Displaying the result, ensuring two-digit format
+            document.getElementById("days").innerText = d
